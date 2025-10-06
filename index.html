@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Portfolio Designer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="form-panel">
+      <!-- Progress bar -->
+      <div class="progress-bar">
+        <div class="progress-step active"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+      </div>
+
+      <form id="portfolioForm" novalidate>
+        <!-- Step 1: About -->
+        <div class="form-step active" data-step="1">
+          <h2>About You</h2>
+          <label for="nameInput">Name:</label>
+          <input type="text" id="nameInput" placeholder="Enter your full name" />
+          
+          <label for="aboutInput">Professional Summary:</label>
+          <textarea id="aboutInput" placeholder="Short intro about yourself" rows="5"></textarea>
+          
+          <button type="button" class="next-btn">Next</button>
+        </div>
+
+        <!-- Step 2: Skills -->
+        <div class="form-step" data-step="2">
+          <h2>Your Skills</h2>
+          <div id="skillsContainer">
+            <input type="text" class="skill-input" placeholder="Add a skill" />
+          </div>
+          <button type="button" id="addSkillBtn">Add Another Skill</button>
+          <div class="navigation-buttons">
+            <button type="button" class="prev-btn">Previous</button>
+            <button type="button" class="next-btn">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Projects -->
+        <div class="form-step" data-step="3">
+          <h2>Your Projects</h2>
+          <div id="projectsContainer">
+            <div class="project-item">
+              <input type="text" class="project-title" placeholder="Project Title" />
+              <textarea class="project-desc" placeholder="Project Description" rows="3"></textarea>
+            </div>
+          </div>
+          <button type="button" id="addProjectBtn">Add Another Project</button>
+          <div class="navigation-buttons">
+            <button type="button" class="prev-btn">Previous</button>
+            <button type="button" class="next-btn">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Contact -->
+        <div class="form-step" data-step="4">
+          <h2>Contact Info</h2>
+          <label for="emailInput">Email:</label>
+          <input type="email" id="emailInput" placeholder="Enter your email" />
+          <label for="phoneInput">Phone:</label>
+          <input type="text" id="phoneInput" placeholder="Enter your phone number" />
+          <div class="navigation-buttons">
+            <button type="button" class="prev-btn">Previous</button>
+            <button type="submit">Generate Portfolio</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="preview-panel">
+      <h2>Live Portfolio Preview</h2>
+      <div id="portfolioPreview">
+        <section id="previewAbout">
+          <h1 id="previewName">Your Name</h1>
+          <p id="previewAboutText">Your professional summary will appear here.</p>
+        </section>
+
+        <section id="previewSkills">
+          <h2>Skills</h2>
+          <ul id="previewSkillsList"></ul>
+        </section>
+
+        <section id="previewProjects">
+          <h2>Projects</h2>
+          <div id="previewProjectsList"></div>
+        </section>
+
+        <section id="previewContact">
+          <h2>Contact</h2>
+          <p>Email: <span id="previewEmail"></span></p>
+          <p>Phone: <span id="previewPhone"></span></p>
+        </section>
+      </div>
+      <button id="exportHtmlBtn" type="button" style="margin-top: 20px; padding: 12px 20px; background:#2980B9; color: white; border: none; border-radius: 6px; cursor: pointer;">
+        Download Portfolio as HTML
+      </button>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
